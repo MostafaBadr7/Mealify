@@ -1,0 +1,85 @@
+body {
+  transition: background-color 1s, color 1s linear !important;
+}
+#mode:checked + .light-mode {
+  display: block !important;
+}
+#mode:checked ~ .dark-mode {
+  display: none !important;
+}
+#mode:not(:checked) + .light-mode {
+  display: none !important;
+}
+
+#mode:not(:checked) ~ .dark-mode {
+  display: block !important;
+}
+
+:root:has(#mode:checked) body,
+#Contact div {
+  background-color: black !important;
+  color: #eee !important;
+  transition: background-color 1s, color 1s linear !important;
+}
+:root:has(#mode:not(:checked)) #Contact div {
+  background-color: white !important;
+  color: #000 !important;
+  transition: background-color 1s, color 1s linear !important;
+}
+:root:has(#mode:checked) .contac-logo {
+  background-color: red !important;
+  color: #eee !important;
+}
+:root:has(#mode:not(:checked)) #Contact .contac-logo {
+  background-color: red !important;
+  color: #eee !important;
+}
+:root:has(#mode:checked) p {
+  color: #eee !important;
+}
+:root:has(#mode:checked) nav {
+  background-color: rgb(97, 66, 66) !important;
+  color: #fff !important;
+  transition: background-color 0.5s, color 0.5s linear !important;
+}
+:root:has(#mode:checked) .active::after,
+.nav-link:hover::after {
+  background-color: #fff !important;
+  color: #fff !important;
+}
+:root:has(#mode:checked) nav .nav-link,
+a,
+.light-mode,
+.navbar-brand {
+  color: #fff !important;
+}
+:root:has(#mode:not(:checked)) nav .nav-link,
+:root:has(#mode:not(:checked)) a,
+.light-mode,
+.nav-link:hover::after,
+:root:has(#mode:not(:checked)) .navbar-brand {
+  color: #000 !important;
+}
+:root:has(#mode:not(:checked)) .active::after,
+:root:has(#mode:not(:checked)) .nav-link:hover::after {
+  background-color: red !important;
+}
+:root:has(#mode:checked) .header,
+.video-icon {
+  background-color: rgb(0, 0, 0) !important;
+  color: #eee !important;
+  transition: background-color 1s, color 1s linear !important;
+}
+:root:has(#mode:not(:checked)) .header,
+.video-icon {
+  transition: background-color 1s, color 1s linear !important;
+}
+:root:has(#mode:checked) .chef::after {
+  background-image: url(./images/team-shape-dark.svg);
+}
+:root:has(#mode:checked) .chef {
+  background-color: #141414 !important  ;
+}
+:root:has(#mode:checked) .head-img {
+  filter: drop-shadow(5px 5px 20px #fff);
+}
